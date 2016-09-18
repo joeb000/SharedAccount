@@ -28,6 +28,13 @@ contract MultiSig {
     period = _period;
   }
 
+  function setPeriod(uint _period) onlyPartners {
+      period = _period;
+  }
+
+  function setPartner(address _partner) onlyPartners {
+      partner = _partner;
+  }
 
   function requestWithdraw(address _recip, uint _amt) onlyPartners {
     pendingWithdraws[_recip].amount = _amt;
